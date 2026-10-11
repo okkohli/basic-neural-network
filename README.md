@@ -86,11 +86,11 @@ The hidden layer applies the **rectified linear unit (ReLU)**:
 
 $$
 Z^{[1]} = W^{[1]}X+b^{[1]},\qquad
-A^{[1]}=\operatorname{ReLU}(Z^{[1]})
+A^{[1]}=\mathrm{ReLU}(Z^{[1]})
 $$
 
 $$
-\operatorname{ReLU}(z)=\max(0,z)
+\mathrm{ReLU(z)}=\max(0,z)
 $$
 
 The output layer produces class scores and applies **softmax**:
@@ -139,7 +139,7 @@ For neural networks, a neuron can influence the loss along **multiple paths**, s
 
 #### Step 2: Differentiate the output layer
 
-For one example, let $a^{[2]}=\operatorname{softmax}(z^{[2]})$ and
+For one example, let $a^{[2]}=\mathrm{softmax}(z^{[2]})$ and
 
 $$
 \ell=-\sum_k y_k\log(a^{[2]}_k).
@@ -340,13 +340,13 @@ Here $\alpha$ is the **learning rate**. The implementation uses **full-batch gra
 The predicted class for example $i$ is
 
 $$
-\hat y_i=\operatorname*{argmax}_{k}A^{[2]}_{k,i}
+\hat y_i=\mathrm*{argmax}_{k}A^{[2]}_{k,i}
 $$
 
 and the accuracy is
 
 $$
-\operatorname{Accuracy}=\frac{1}{m}\sum_{i=1}^{m}\mathbf{1}[\hat y_i=y_i].
+\mathrm{Accuracy}=\frac{1}{m}\sum_{i=1}^{m}\mathbf{1}[\hat y_i=y_i].
 $$
 
 Unlike cross-entropy, accuracy is an evaluation metric, not the differentiable training objective.
